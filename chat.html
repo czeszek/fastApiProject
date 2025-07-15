@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}ChatBot{% endblock %}
+{% block content %}
+<h2>Chat with Bot</h2>
+<div>
+    {% for msg in messages %}
+        <div class="msg {{ msg.sender }}">{{ msg.sender }}: {{ msg.content }}</div>
+    {% endfor %}
+</div>
+<form method="post">
+    <input type="text" name="message" placeholder="Type your message...">
+    <input type="submit" value="Send">
+</form>
+{% endblock %}
