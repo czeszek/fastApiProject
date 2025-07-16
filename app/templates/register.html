@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Register Company{% endblock %}
+{% block content %}
+<h2>Register a Company</h2>
+<form method="post">
+    <label>Company Name:</label><br>
+    <input type="text" name="name"><br>
+    <label>WhatsApp Number:</label><br>
+    <input type="text" name="whatsapp_number"><br>
+    <label>Industry:</label><br>
+    <input type="text" name="industry"><br><br>
+    <input type="submit" value="Register">
+</form>
+{% endblock %}
