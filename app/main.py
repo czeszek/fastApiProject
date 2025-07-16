@@ -5,9 +5,7 @@ from app.database import engine
 
 app = FastAPI()
 
-# Tworzenie tabel w bazie danych (jeśli nie istnieją)
 models.Base.metadata.create_all(bind=engine)
 
-# Rejestracja routerów
 app.include_router(company_routes.router)
 app.include_router(chat_routes.router)

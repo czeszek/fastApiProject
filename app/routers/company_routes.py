@@ -16,7 +16,7 @@ def get_db():
     finally:
         db.close()
  
- 
+@router.get("/", response_class=HTMLResponse)
 @router.get("/register", response_class=HTMLResponse)
 async def show_register_form(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})
