@@ -4,10 +4,10 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from database import SessionLocal
 from models import ChatMessage
+from pathlib import Path
 
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
-
+templates = Jinja2Templates(directory=str(Path(str(__file__).replace('routers/', '')).parent / "templates"))
 
 def get_db():
     db = SessionLocal()
