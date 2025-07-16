@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from database import SessionLocal
-import models
+import models             
  
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
