@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Page{% endblock %}</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/register">Register Company</a>
+        <a href="/companies">Company List</a>
+        <a href="/configure/1">Configure Account</a>
+        <a href="/chat/1">ChatBot</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
