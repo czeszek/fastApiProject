@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
-from database import SessionLocal
-import models             
+from app.database import SessionLocal
+from app import models
  
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
  
  
 def get_db():
@@ -36,7 +36,7 @@ async def register_company(
     )
     db.add(new_company)
     db.commit()
-    return RedirectResponse("/register", status_code=303)
+    return RedirectResponse(url="/register", status_code=303, background=False)
  
  
 @router.get("/configure/{company_id}", response_class=HTMLResponse)
